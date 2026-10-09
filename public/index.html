@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LCart - Locality Service Provider Pvt Ltd | Electrician, Painter, Tutor, Cleaner & More</title>
+  <meta name="description" content="LCart is your trusted locality service provider. Book certified Electricians, Painters, Tuition Teachers, Cleaners, Plumbers, and AC Technicians in 30 minutes with 100% upfront pricing and warranty.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%200%22%20100%22%20100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span class="badge-pulse"></span>
+      <span><strong>Live in 18+ Cities:</strong> 15,000+ Police Verified Pros Available Right Now</span>
+    </div>
+    <div class="top-bar-links">
+      <div class="top-bar-item"><span>📞 24x7 Helpdesk:</span> <strong>1800-LCART-HELP</strong></div>
+      <div class="top-bar-item"><span>🛡️ 30-Day Service Guarantee</span></div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="logo-wrapper">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">
+          <span class="logo-title">LCart<span>.in</span></span>
+          <span class="logo-subtitle">Locality Service Provider Pvt Ltd</span>
+        </div>
+      </div>
+
+      <!-- Locality / City Dropdown -->
+      <div class="locality-dropdown-wrap">
+        <span>📍</span>
+        <select id="localitySelect" aria-label="Select your locality or city">
+          <option value="Central City / All Localities">All Localities</option>
+          <option value="Civil Lines & Model Town">Civil Lines & Model Town</option>
+          <option value="Sector 14 & University Enclave">Sector 14 & University Area</option>
+          <option value="South Extension & Green Park">South Extension & Green Park</option>
+          <option value="Indira Nagar & Gomti Sector">Indira Nagar & Gomti Sector</option>
+          <option value="Koramangala & HSR Layout">Koramangala & HSR Layout</option>
+          <option value="Viman Nagar & Kalyani Nagar">Viman Nagar & Kalyani Nagar</option>
+          <option value="Salt Lake & Newtown">Salt Lake & Newtown</option>
+        </select>
+      </div>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#categoriesSection" class="nav-link">Categories</a></li>
+          <li><a href="#servicesSection" class="nav-link">Services</a></li>
+          <li><a href="#providersSection" class="nav-link">Local Pros</a></li>
+          <li><a href="#howItWorks" class="nav-link">How It Works</a></li>
+          <li><a href="#testimonialsSection" class="nav-link">Reviews</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div id="navUserSection">
+          <!-- Dynamically populated: Login/Register buttons or User Badge -->
+          <button class="btn btn-outline" id="navLoginBtn">Log In</button>
+          <button class="btn btn-primary" id="navSignupBtn">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-container">
+        <div class="hero-text-content">
+          <div class="hero-tag">
+            <span>✨</span> #1 Rated On-Demand Locality Services
+          </div>
+          <h1 class="hero-title">
+            Expert <span class="gradient-text">Local Services</span> Delivered to Your Doorstep.
+          </h1>
+          <p class="hero-desc">
+            Connect with background-checked Electricians, Master Painters, Home Tutors, Deep Cleaners, and Plumbers in your neighborhood. Guaranteed fixed pricing with zero hidden charges.
+          </p>
+
+          <!-- Quick Search & Locality Card -->
+          <div class="hero-search-card">
+            <div class="search-field">
+              <span>🔍</span>
+              <input type="text" id="heroSearchInput" placeholder="Try 'Painter', 'Electrician', 'Tuition Teacher'..." aria-label="Search local services">
+            </div>
+            <div class="search-field" style="max-width: 200px;">
+              <span>📍</span>
+              <select id="heroLocalitySelect" aria-label="Choose your area">
+                <option value="Central City / All Localities">All Areas</option>
+                <option value="Civil Lines & Model Town">Civil Lines</option>
+                <option value="Sector 14 & University Enclave">Sector 14</option>
+                <option value="South Extension & Green Park">Green Park</option>
+                <option value="Koramangala & HSR Layout">HSR Layout</option>
+              </select>
+            </div>
+            <button class="btn btn-primary btn-lg" id="heroSearchBtn">
+              Find Services
+            </button>
+          </div>
+
+          <!-- Quick Category Pills -->
+          <div class="hero-quick-chips" id="heroQuickChips">
+            <!-- Populated dynamically via JS -->
+          </div>
+
+          <!-- Trust Numbers -->
+          <div class="hero-stats-row">
+            <div class="hero-stat-item">
+              <span class="hero-stat-val" id="statBookings">15,000+</span>
+              <span class="hero-stat-lbl">Jobs Completed</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-val" id="statPartners">1,200+</span>
+              <span class="hero-stat-lbl">Verified Experts</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-val" id="statSatisfaction">99.4%</span>
+              <span class="hero-stat-lbl">Customer Rating</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-val" id="statSpeed">30 Mins</span>
+              <span class="hero-stat-lbl">Avg Response Time</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase -->
+        <div class="hero-visual-wrapper">
+          <div class="hero-banner-card">
+            <div class="hero-card-pattern"></div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #a5b4fc; font-weight: 700;">
+              Immediate Neighborhood Dispatch
+            </span>
+            <h3 style="font-size: 1.6rem; color: #fff; margin: 10px 0 16px;">
+              Ready to help you anytime, anywhere in your locality
+            </h3>
+            <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.5;">
+              From high-voltage switchboard repairs to personalized home coaching and emergency plumbing, our top-tier technicians arrive with complete toolkit.
+            </p>
+
+            <div class="hero-pro-grid">
+              <div class="hero-pro-box">
+                <div class="icon">⚡</div>
+                <div>
+                  <h4>Electricians</h4>
+                  <p>Repairs in 30 mins</p>
+                </div>
+              </div>
+              <div class="hero-pro-box">
+                <div class="icon">🎨</div>
+                <div>
+                  <h4>Painters</h4>
+                  <p>1-Day Express Polish</p>
+                </div>
+              </div>
+              <div class="hero-pro-box">
+                <div class="icon">📚</div>
+                <div>
+                  <h4>Home Tutors</h4>
+                  <p>CBSE/ICSE 1-on-1</p>
+                </div>
+              </div>
+              <div class="hero-pro-box">
+                <div class="icon">✨</div>
+                <div>
+                  <h4>Deep Cleaning</h4>
+                  <p>360° Steam Sanitized</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Guarantee Badge -->
+          <div class="floating-guarantee-pill">
+            <div class="floating-icon">🛡️</div>
+            <div>
+              <strong style="font-size: 0.9rem; display: block;">100% LCart Safe Promise</strong>
+              <span style="font-size: 0.775rem; color: #64748b;">Post-service inspection & 30-day rework warranty</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES SECTION -->
+    <section class="section" id="categoriesSection">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">All-In-One Catalog</span>
+          <h2 class="section-title">Explore Local Services by Category</h2>
+          <p class="section-subtitle">
+            Whatever assistance your home or family needs, verified neighborhood professionals are just a click away.
+          </p>
+        </div>
+
+        <div class="categories-grid" id="categoriesGrid">
+          <!-- Loaded dynamically from /api/categories -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES DISCOVERY MARKETPLACE -->
+    <section class="section" id="servicesSection" style="background: #ffffff; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">Book On-Demand</span>
+          <h2 class="section-title">Choose from Popular Locality Services</h2>
+          <p class="section-subtitle">
+            Transparent flat-rate pricing, certified tools, and upfront turnaround time.
+          </p>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div class="services-discovery-bar">
+          <div class="discovery-left">
+            <div class="search-service-input">
+              <span>🔍</span>
+              <input type="text" id="serviceSearchInput" placeholder="Filter by name, appliance, skill..." aria-label="Filter services">
+            </div>
+          </div>
+          <div class="discovery-right">
+            <select id="categoryFilterSelect" class="filter-select" aria-label="Select category filter">
+              <option value="all">All Service Categories</option>
+            </select>
+            <select id="sortSelect" class="filter-select" aria-label="Sort services">
+              <option value="popular">Most Popular</option>
+              <option value="rating">Highest Rated</option>
+              <option value="price_asc">Price: Low to High</option>
+              <option value="price_desc">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="services-grid" id="servicesGrid">
+          <!-- Loaded dynamically from /api/services -->
+        </div>
+      </div>
+    </section>
+
+    <!-- MY BOOKINGS / ORDERS SECTION (Dynamic for logged in user) -->
+    <section class="section orders-section" id="ordersSection" style="display: none;">
+      <div class="section-container">
+        <div class="orders-container-box">
+          <div class="orders-header-row">
+            <div>
+              <span class="section-tag">User Account</span>
+              <h2 style="font-size: 1.8rem; margin-top: 6px;">Your Booked Services & Orders</h2>
+              <p style="color: #64748b; font-size: 0.9rem;">Track real-time progress, technician assignments, and service receipts.</p>
+            </div>
+            <button class="btn btn-outline" onclick="window.location.href='#servicesSection'">
+              + Book Another Service
+            </button>
+          </div>
+
+          <div class="orders-list" id="ordersList">
+            <!-- Loaded dynamically from /api/bookings -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCAL SERVICE PROVIDERS DIRECTORY -->
+    <section class="section" id="providersSection">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">Verified Neighborhood Specialists</span>
+          <h2 class="section-title">Meet Top Rated Local Professionals</h2>
+          <p class="section-subtitle">
+            Every professional on LCart undergoes strict background checks, skills certification, and identity verification.
+          </p>
+        </div>
+
+        <div class="providers-grid" id="providersGrid">
+          <!-- Loaded dynamically from /api/providers -->
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="howItWorks" style="background: #f1f5f9;">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">Simple & Effortless</span>
+          <h2 class="section-title">How LCart Works in 3 Quick Steps</h2>
+          <p class="section-subtitle">
+            Zero hassle. Book in under 60 seconds and relax while our verified pro handles the job.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-num">01</span>
+            <div class="step-icon">📱</div>
+            <h3>Select Service & Time</h3>
+            <p>Choose from our extensive catalog of local services, select your convenient date & time slot, and tell us your locality.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-num">02</span>
+            <div class="step-icon">👨‍🔧</div>
+            <h3>Verified Expert Arrives</h3>
+            <p>Our background-verified professional arrives at your doorstep on time with all genuine tools and spare parts.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-num">03</span>
+            <div class="step-icon">💳</div>
+            <h3>Pay After Satisfaction</h3>
+            <p>Inspect the completed work and pay securely via UPI, Card, or Cash. Enjoy our 30-day hassle-free rework guarantee.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS & TESTIMONIALS -->
+    <section class="section" id="testimonialsSection">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">Customer Love</span>
+          <h2 class="section-title">What Neighbors Say About LCart</h2>
+          <p class="section-subtitle">
+            Read authentic reviews from satisfied homeowners and parents across our service localities.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "We had a short-circuit in our kitchen switchboard at 8 PM. Rajesh from LCart reached within 20 minutes, diagnosed the loose earthing wire, and fixed it safely. Super transparent pricing!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-initial">AD</div>
+              <div class="author-info">
+                <h5>Ananya Deshmukh</h5>
+                <span>Civil Lines • Electrician Service</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "Finding a reliable home tutor for Class 9 mathematics used to be stressful. Sunita Ma'am has been phenomenal with my daughter. Her midterm score increased from 68% to 92%!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-initial">AS</div>
+              <div class="author-info">
+                <h5>Dr. Alok Sen</h5>
+                <span>University Enclave • Tuition Teacher</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "Priya's deep cleaning team cleaned our 3BHK flat prior to housewarming. The kitchen chimney, tiles, and bathroom mirrors are crystal clean. Definitely recommending LCart to all neighbors!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-initial">MN</div>
+              <div class="author-info">
+                <h5>Meera Nair</h5>
+                <span>Gomti Sector • Deep Cleaner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section" style="background: #ffffff; border-top: 1px solid var(--border-light);">
+      <div class="section-container" style="max-width: 880px;">
+        <div class="section-header">
+          <span class="section-tag">Got Questions?</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px 22px; cursor: pointer;">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: #0f172a;">How does LCart ensure the safety of service professionals?</summary>
+            <p style="margin-top: 10px; color: #64748b; font-size: 0.95rem; line-height: 1.6;">
+              Every provider on LCart undergoes biometric police verification, valid government ID verification, and comprehensive hands-on skills tests before onboarding.
+            </p>
+          </details>
+
+          <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px 22px; cursor: pointer;">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: #0f172a;">What is the 30-Day Happiness Guarantee?</summary>
+            <p style="margin-top: 10px; color: #64748b; font-size: 0.95rem; line-height: 1.6;">
+              If any repaired switch, plumbing joint, or appliance acts up within 30 days of service, our technician will revisit and resolve the issue free of charge.
+            </p>
+          </details>
+
+          <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px 22px; cursor: pointer;">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: #0f172a;">Can I reschedule or cancel my booking?</summary>
+            <p style="margin-top: 10px; color: #64748b; font-size: 0.95rem; line-height: 1.6;">
+              Yes! You can easily cancel or change your booking directly from your 'My Bookings' dashboard with zero cancellation fees up to 1 hour before scheduled time.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <div class="logo-wrapper" style="margin-bottom: 16px;">
+            <div class="logo-icon">⚡</div>
+            <div class="logo-text">
+              <span class="logo-title" style="color: #fff;">LCart<span>.in</span></span>
+              <span class="logo-subtitle" style="color: #94a3b8;">Locality Service Provider Pvt Ltd</span>
+            </div>
+          </div>
+          <p>
+            India's premier hyperlocal services platform connecting homes with trusted electricians, painters, teachers, cleaners, plumbers, and technicians.
+          </p>
+          <div style="font-size: 0.825rem; color: #64748b;">
+            CIN: U74999DL2024PTC123456 • ISO 9001:2015 Certified
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Top Services</h4>
+          <ul class="footer-links">
+            <li><a href="#servicesSection">Electrician & Wiring</a></li>
+            <li><a href="#servicesSection">Home Painting & Putty</a></li>
+            <li><a href="#servicesSection">Tuition & Private Tutors</a></li>
+            <li><a href="#servicesSection">Deep Home Cleaning</a></li>
+            <li><a href="#servicesSection">Plumber & Leak Repair</a></li>
+            <li><a href="#servicesSection">AC Foam Jet Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#categoriesSection">About LCart</a></li>
+            <li><a href="#howItWorks">How It Works</a></li>
+            <li><a href="#providersSection">Partner With Us</a></li>
+            <li><a href="#testimonialsSection">Customer Reviews</a></li>
+            <li><a href="/api/health" target="_blank">API Health Status</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>24x7 Customer Support</h4>
+          <div class="footer-contact-item">
+            <span>📞</span>
+            <div>
+              <strong>Toll Free Helpline:</strong><br>
+              1800-LCART-HELP (1800 522 7800)
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <span>✉️</span>
+            <div>
+              <strong>Email Support:</strong><br>
+              support@lcart.in
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <span>🏢</span>
+            <div>
+              <strong>Corporate Office:</strong><br>
+              LCart Tower, Level 4, Sector 18, NCR, India
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div>
+          © 2026 LCart Service Provider Pvt Ltd. All Rights Reserved.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Safety Guidelines</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== AUTH MODAL ==================== -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="authModalTitle" style="font-size: 1.35rem;">Account Access</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="auth-tabs">
+          <div class="auth-tab active" id="tabLogin">Sign In</div>
+          <div class="auth-tab" id="tabRegister">New User Registration</div>
+        </div>
+
+        <!-- 1-Click Quick Demo Login Helper -->
+        <div style="background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 8px; padding: 10px 14px; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-size: 0.8rem; color: #3730a3;">
+            <strong>Test Demo Account:</strong> demo@lcart.com
+          </div>
+          <button class="btn btn-sm btn-primary" onclick="quickDemoLogin()" style="padding: 4px 10px; font-size: 0.75rem;">
+            1-Click Auto Fill
+          </button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="formLogin">
+          <div class="form-group">
+            <label for="loginEmail">Email Address</label>
+            <input type="email" id="loginEmail" class="form-control" placeholder="name@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary" id="loginSubmitBtn" style="width: 100%; margin-top: 10px;">
+            Sign In
+          </button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="formRegister" style="display: none;">
+          <div class="form-group">
+            <label for="regName">Full Name</label>
+            <input type="text" id="regName" class="form-control" placeholder="e.g. Rahul Sharma" required>
+          </div>
+          <div class="form-group">
+            <label for="regEmail">Email Address</label>
+            <input type="email" id="regEmail" class="form-control" placeholder="rahul@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="regPhone">Phone Number</label>
+            <input type="tel" id="regPhone" class="form-control" placeholder="+91 98765 43210" required>
+          </div>
+          <div class="form-group">
+            <label for="regPassword">Create Password</label>
+            <input type="password" id="regPassword" class="form-control" placeholder="Minimum 6 characters" required>
+          </div>
+          <div class="form-group">
+            <label for="regAddress">Home / Locality Address</label>
+            <input type="text" id="regAddress" class="form-control" placeholder="Flat No, Apartment, Sector, Locality">
+          </div>
+          <button type="submit" class="btn btn-primary" id="registerSubmitBtn" style="width: 100%; margin-top: 10px;">
+            Create Free Account
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 4-STEP BOOKING MODAL ==================== -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 style="font-size: 1.35rem;">Book Neighborhood Service</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <!-- Step Wizard Progress Indicator -->
+        <div class="wizard-steps-indicator">
+          <div class="wizard-step active" data-step="1">
+            <span class="wizard-step-circle">1</span>
+            <span>Review</span>
+          </div>
+          <div class="wizard-step" data-step="2">
+            <span class="wizard-step-circle">2</span>
+            <span>Schedule</span>
+          </div>
+          <div class="wizard-step" data-step="3">
+            <span class="wizard-step-circle">3</span>
+            <span>Address</span>
+          </div>
+          <div class="wizard-step" data-step="4">
+            <span class="wizard-step-circle">4</span>
+            <span>Confirm</span>
+          </div>
+        </div>
+
+        <!-- Selected Service Summary Header -->
+        <div class="booking-service-summary">
+          <img src="" id="bookingSummaryImg" alt="Service thumbnail" class="booking-summary-thumb">
+          <div style="flex-grow: 1;">
+            <h4 id="bookingSummaryTitle" style="font-size: 1.05rem; margin-bottom: 2px;">Service Title</h4>
+            <span style="font-size: 0.8rem; color: #10b981; font-weight: 600;">✓ Verified Local Professional Assigned</span>
+          </div>
+          <div style="text-align: right;">
+            <span style="font-size: 0.75rem; color: #64748b; display: block;">Flat Price</span>
+            <strong id="bookingSummaryPrice" style="font-size: 1.35rem; color: #4f46e5; font-family: 'Outfit';">₹0</strong>
+          </div>
+        </div>
+
+        <form id="bookingForm">
+          <!-- STEP 1: Details & Preferences -->
+          <div id="bookingStep1">
+            <div style="background: #f8fafc; border-radius: 8px; padding: 14px; margin-bottom: 20px; font-size: 0.875rem;">
+              <h5 style="margin-bottom: 6px;">Included with this service:</h5>
+              <ul style="padding-left: 20px; color: #475569;">
+                <li>Complete tool setup and high-grade safety equipment</li>
+                <li>Post-job cleanup and performance testing</li>
+                <li>30-day rework guarantee backed by LCart Warranty Card</li>
+              </ul>
+            </div>
+            <div class="form-group">
+              <label for="bookNotes">Special instructions or requests (optional)</label>
+              <textarea id="bookNotes" class="form-control" rows="2" placeholder="e.g. Need ladder, bring spare 16A MCB, or ring bell twice..."></textarea>
+            </div>
+            <button type="button" class="btn btn-primary" id="step1NextBtn" style="width: 100%;">
+              Continue to Select Slot &rarr;
+            </button>
+          </div>
+
+          <!-- STEP 2: Date & Slot Selection -->
+          <div id="bookingStep2" style="display: none;">
+            <div class="form-group">
+              <label for="bookDate">Select Service Date</label>
+              <input type="date" id="bookDate" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label>Select Arrival Time Slot</label>
+              <div class="slots-grid">
+                <div class="slot-btn selected" data-slot="Morning (09:00 AM - 12:00 PM)">
+                  🌅 Morning<br><span style="font-size: 0.7rem; color: #64748b;">9 AM - 12 PM</span>
+                </div>
+                <div class="slot-btn" data-slot="Afternoon (12:00 PM - 04:00 PM)">
+                  ☀️ Afternoon<br><span style="font-size: 0.7rem; color: #64748b;">12 PM - 4 PM</span>
+                </div>
+                <div class="slot-btn" data-slot="Evening (04:00 PM - 08:00 PM)">
+                  🌆 Evening<br><span style="font-size: 0.7rem; color: #64748b;">4 PM - 8 PM</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-top: 24px;">
+              <button type="button" class="btn btn-outline" id="step2BackBtn" style="flex: 1;">&larr; Back</button>
+              <button type="button" class="btn btn-primary" id="step2NextBtn" style="flex: 2;">Continue to Address &rarr;</button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Customer Information & Address -->
+          <div id="bookingStep3" style="display: none;">
+            <div class="form-group">
+              <label for="bookName">Customer Full Name *</label>
+              <input type="text" id="bookName" class="form-control" placeholder="Your name" required>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <div class="form-group">
+                <label for="bookPhone">Contact Phone *</label>
+                <input type="tel" id="bookPhone" class="form-control" placeholder="+91 98765 43210" required>
+              </div>
+              <div class="form-group">
+                <label for="bookEmail">Email for Receipt</label>
+                <input type="email" id="bookEmail" class="form-control" placeholder="name@example.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bookLocality">Locality / Sector</label>
+              <input type="text" id="bookLocality" class="form-control" placeholder="e.g. Model Town, Sector 14, Civil Lines">
+            </div>
+            <div class="form-group">
+              <label for="bookAddress">Complete Street Address *</label>
+              <textarea id="bookAddress" class="form-control" rows="2" placeholder="House/Flat No, Landmark, Street address" required></textarea>
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-top: 24px;">
+              <button type="button" class="btn btn-outline" id="step3BackBtn" style="flex: 1;">&larr; Back</button>
+              <button type="submit" class="btn btn-primary" id="submitBookingFinalBtn" style="flex: 2;">
+                Confirm & Place Booking
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4: Success Confirmation -->
+          <div id="bookingSuccessStep" style="display: none; text-align: center; padding: 20px 0;">
+            <div style="width: 70px; height: 70px; background: #ecfdf5; color: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 16px;">
+              ✓
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 6px;">Booking Confirmed!</h3>
+            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 20px;">
+              Your service request is confirmed. An executive will arrive at your scheduled time.
+            </p>
+
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px; text-align: left; margin-bottom: 24px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <span style="color: #64748b; font-size: 0.85rem;">Order Reference:</span>
+                <strong id="successOrderId" style="color: #4f46e5;">BK-123456</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <span style="color: #64748b; font-size: 0.85rem;">Service:</span>
+                <strong id="successServiceTitle">Electrician</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <span style="color: #64748b; font-size: 0.85rem;">Scheduled On:</span>
+                <strong id="successDateTime">Tomorrow (Morning)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: #64748b; font-size: 0.85rem;">Payment Mode:</span>
+                <strong style="color: #059669;">Pay After Service (Cash / UPI)</strong>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="viewBookingsFromSuccessBtn" style="width: 100%;">
+              View in My Bookings Dashboard
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SERVICE DETAILS MODAL ==================== -->
+  <div class="modal-overlay" id="detailsModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="detailTitle" style="font-size: 1.35rem;">Service Details</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img id="detailImg" src="" alt="Service preview" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div>
+            <span id="detailRating" style="font-size: 0.9rem; font-weight: 700; color: #0f172a;">★ 4.9</span>
+            <span style="color: #64748b; font-size: 0.85rem;"> • Est: <span id="detailDuration">45 mins</span></span>
+          </div>
+          <div style="font-family: 'Outfit'; font-size: 1.4rem; font-weight: 800; color: #4f46e5;" id="detailPrice">₹0</div>
+        </div>
+
+        <p id="detailDesc" style="color: #475569; font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;"></p>
+
+        <h5 style="margin-bottom: 8px;">Key Features:</h5>
+        <div id="detailFeatures" style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px;"></div>
+
+        <h5 style="margin-bottom: 8px;">Verified Customer Reviews:</h5>
+        <div id="detailReviewsList" style="margin-bottom: 24px;"></div>
+
+        <button class="btn btn-primary" id="detailBookBtn" style="width: 100%;">
+          Proceed to Book This Service
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JavaScript Client -->
+  <script src="js/app.js"></script>
+</body>
+</html>
