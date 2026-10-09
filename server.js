@@ -365,6 +365,13 @@ async function startServer() {
   });
 }
 
-startServer().catch(err => {
-  console.error('Fatal server startup error:', err);
-});
+// Automatically initialize db
+db.initialize().catch(err => console.error('DB Init error:', err));
+
+if (!process.env.VERCEL) {
+  startServer().catch(err => {
+    console.error('Fatal server startup error:', err);
+  });
+}
+
+module.exports = app;
